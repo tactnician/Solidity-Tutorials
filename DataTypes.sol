@@ -10,8 +10,17 @@ contract DataTypes {
     uint256 public myUint256 = 9999;
     uint8 public myUint8 = 8;
 
+    uint256 public peopleCount;
+
     enum State {Waiting, Ready, Active }
     State public state; 
+
+    struct Person {
+        string _firstName;
+        string _lastName;
+    }
+
+    Person[] public people; 
 
     constructor () {
         state = State.Waiting;
@@ -24,6 +33,11 @@ contract DataTypes {
 
     function isActive() public view returns(bool) {
             return state == State.Active;
+    }
+
+    function addPerson(string memory _firstName, string memory _lastName) public{
+        people.push(Person(_firstName, _lastName));
+        peopleCount += 1;
     }
 
 }
