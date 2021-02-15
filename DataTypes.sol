@@ -10,16 +10,14 @@ contract DataTypes {
     uint256 public myUint256 = 9999;
     uint8 public myUint8 = 8;
 
-    uint256 public peopleCount;
-
     enum State {Waiting, Ready, Active }
     State public state; 
 
+    uint256 public peopleCount;
     struct Person {
         string _firstName;
         string _lastName;
     }
-
     Person[] public people; 
 
     constructor () {
